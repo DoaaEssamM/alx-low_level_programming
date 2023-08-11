@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Description: print alphabet in lower and uppercase
+ * Description: a
  *
  * Return: 0 (success)
 */
@@ -11,19 +11,14 @@
 int main(void)
 {
 	char ch = 'a';
-	char CH = 'A';
 
 	while (ch <= 'z')
 	{
+		if (ch == 'e' || ch == 'q')
+			ch++;
 		putchar(ch);
-		c++;
-	}
-	while (CH <= 'Z')
-	{
-		putchar(CH);
-		c++;
+		ch++;
 	}
 	putchar('\n');
 
 	return (0);
-}
