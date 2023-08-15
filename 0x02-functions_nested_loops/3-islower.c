@@ -5,8 +5,8 @@
  *
  * @c: check fun. input
  *
- * Return : 1 if `c` is lowercase
- * else 0 (success)
+ * Return: return 1 if `c` is lowercase
+ *         otherwise 0 (Success)
 */
 
 int _islower(int c)
