@@ -1,0 +1,47 @@
+#include "main.h"
+
+/**
+ * _atoi - converts a str to an int
+ * @str: string to be converted
+ *
+ * Return: int converted from the string
+*/
+
+int _atoi(char *str)
+{
+	int i, d, n, len, f, digit;
+
+	i = 0;
+	a = 0;
+	n = 0;
+	len = 0;
+	f = 0;
+	digit = 0;
+
+	while (str[len] != '\0')
+		len++;
+
+	while (i < len && f == 0)
+	{
+		if (str[i] == '-')
+			++a;
+
+		if (str[i] >= '0' && str[i] <= '9')
+		{
+			digit = str[i] - '0';
+			if (a % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+			if (str[i + 1] < '0' || str[i + 1] > '9')
+				break;
+			f = 0;
+		}
+		i++;
+	}
+
+	if (f == 0)
+		return (0);
+
+	return (n);
+}
