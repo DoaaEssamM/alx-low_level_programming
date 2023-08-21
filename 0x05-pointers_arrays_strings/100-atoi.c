@@ -12,7 +12,7 @@ int _atoi(char *str)
 	int i, d, n, len, f, digit;
 
 	i = 0;
-	a = 0;
+	d = 0;
 	n = 0;
 	len = 0;
 	f = 0;
@@ -24,12 +24,12 @@ int _atoi(char *str)
 	while (i < len && f == 0)
 	{
 		if (str[i] == '-')
-			++a;
+			++d;
 
 		if (str[i] >= '0' && str[i] <= '9')
 		{
 			digit = str[i] - '0';
-			if (a % 2)
+			if (d % 2)
 				digit = -digit;
 			n = n * 10 + digit;
 			f = 1;
