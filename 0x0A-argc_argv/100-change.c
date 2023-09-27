@@ -8,7 +8,7 @@ include < stdlib.h >
  * @argv: array of arguments
  *
  * Return: 0 (Success), 1 (Error)
- */
+*/
 int main(int argc, char *argv[])
 {
 	int num, j, result;
