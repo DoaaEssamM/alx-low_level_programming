@@ -6,38 +6,40 @@ char *create_buffer(char *file);
 void close_file(int fd);
 
 /**
- * create_buffer - Allocates 1024 bytes for a buffer.
- * @file: The name of the file buffer is storing chars for.
+ * create_buffer - Allocate 1024 bytes for a buffer
+ * @file: The file buffer name which storing chars
  *
- * Return: A pointer to the newly-allocated buffer.
- */
+ * Return: A pointer to the new buffer
+*/
+
 char *create_buffer(char *file)
 {
-	char *buffer;
+	char *buff;
 
-	buffer = malloc(sizeof(char) * 1024);
+	buff = malloc(sizeof(char) * 1024);
 
-	if (buffer == NULL)
+	if (buff == NULL)
 	{
 		dprintf(STDERR_FILENO,
 			"Error: Can't write to %s\n", file);
 		exit(99);
 	}
 
-	return (buffer);
+	return (buff);
 }
 
 /**
- * close_file - Closes file descriptors.
- * @fd: The file descriptor to be closed.
- */
+ * close_file - Close the file descriptors
+ * @fd: The file descriptor
+*/
+
 void close_file(int fd)
 {
-	int c;
+	int cl;
 
-	c = close(fd);
+	cl = close(fd);
 
-	if (c == -1)
+	if (cl == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
@@ -45,18 +47,19 @@ void close_file(int fd)
 }
 
 /**
- * main - Copies the contents of a file to another file.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
+ * main - Copy the contents of a file to another file
+ * @argc: The num. of arguments
+ * @argv: Array of pointers to the arguments
  *
- * Return: 0 on success.
+ * Return: 0 (success)
  *
- * Description: If the argument count is incorrect - exit code 97.
- * If file_from does not exist or cannot be read - exit code 98.
- * If file_to cannot be created or written to - exit code 99.
- * If file_to or file_from cannot be closed - exit code 100.
- */
-int main(int argc, char *argv[])
+ * Description: exit code 97 - If the argument count is not correct
+ * exit code 98 - If file_from does not exist or cannot be read
+ * exit code 99 - If file_to cannot be created or written
+ * exit code 100 - If file_to or file_from cannot be closed
+*/
+
+nt main(int argc, char *argv[])
 {
 	int from, to, r, w;
 	char *buffer;
@@ -101,4 +104,3 @@ int main(int argc, char *argv[])
 
 	return (0);
 }
-
