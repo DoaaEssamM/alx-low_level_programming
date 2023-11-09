@@ -5,7 +5,7 @@
  * dlistint_t linked list
  *
  * @head: head of the list
- * @index: the new node index 
+ * @index: the new node index
  * Return: 1 (success), -1 (failure)
 */
 

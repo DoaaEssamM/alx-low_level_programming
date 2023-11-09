@@ -5,7 +5,7 @@
  *
  * @h: head of the list
  * @idx: index of the new node
- * @n: the new node value 
+ * @n: the new node value
  * Return: the address of the new node, or NULL (failure)
 */
 
